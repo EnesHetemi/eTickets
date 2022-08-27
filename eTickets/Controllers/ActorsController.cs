@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eTickets.Controllers
 {
-    public class ActrosController : Controller
+    public class ActorsController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ActrosController(AppDbContext context)
+        public ActorsController(AppDbContext context)
         {
             _context = context;
         }
@@ -16,7 +16,7 @@ namespace eTickets.Controllers
         public IActionResult Index()
         {
             var data = _context.Actors.ToList();
-            return View();
+            return View(data);
         }
     }
 }
