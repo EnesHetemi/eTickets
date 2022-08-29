@@ -21,8 +21,9 @@ namespace eTickets.Controllers
 
         public IActionResult Login() => View(new LoginVM());
 
+        public IActionResult Register() => View(new RegisterVM());
 
-        [HttpPost]
+[HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
             if (!ModelState.IsValid) return View(loginVM);
