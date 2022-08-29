@@ -31,7 +31,7 @@ namespace eTickets.Controllers
 
         public IActionResult Register() => View(new RegisterVM());
 
-[HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
             if (!ModelState.IsValid) return View(loginVM);
@@ -87,6 +87,11 @@ namespace eTickets.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Movies");
+        }
+
+        public IActionResult AccessDenied(string ReturnUrl)
+        {
+            return View();
         }
     }
 }
